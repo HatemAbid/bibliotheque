@@ -11,6 +11,7 @@ export class HelloComponent  {
 
 /*
 Test Driven Development :
+https://guide-angular.wishtack.io/angular/testing/unit-testing
 http://learnitmyway.com/tdd-example/
 https://openclassrooms.com/fr/courses/3504461-testez-linterface-de-votre-site/4270571-apprenez-le-test-driven-development-tdd
 
