@@ -15,6 +15,9 @@ http://learnitmyway.com/tdd-example/
 
 Recherche Google : fizzbuzz spring boot
 
+https://spring.io/guides/tutorials/rest/
+
+
 Angular CRUD cvtech:https://github.com/aymensellaouti/cvTech
 
 Backend-Entwickler / Spring Boot Fizz Buzz
