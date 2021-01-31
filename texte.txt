@@ -1,0 +1,46 @@
+Voici l’énoncé de l’exercice d’évaluation angular :
+
+ 
+
+Devra être livré une application permettant la gestion des ouvrages d’une librairie
+
+ 
+
+1er Ecran : Authentification via le système Oauth2 de github
+
+2eme écran : Liste des différents ouvrages présent dans une liste avec la possibilité de trier par catégorie d’ouvrage et une fonction de recherche par titre
+
+3eme écran : Formulaire permettant l’ajout d’un nouvel ouvrage.
+
+ 
+
+Les catégories d’ouvrage sont :  Livres, Magazines, Journaux
+
+ 
+
+Voici un diagramme UML pour t’aider :
+
+ 
+
+
+
+ 
+
+Les données seront stockées dans une base mongoDB
+
+ 
+
+Fonctionnalités supplémentaires :
+
+ 
+
+Un menu permettant de naviguer entre la liste des ouvrages et le formulaire d’ajout et permettant à l’utilisateur de se déconnecter (retour à l’écran d’authentification)
+Un webservice REST permettant d’obtenir la liste des ouvrages au format JSON
+Un webservice REST permettant d’ajouter un ouvrage.
+ 
+
+Le code devra respecter les standards et bonnes pratiques de développement (validation TSLINT,commentaires etc…) et sera testée unitairement via Karma/Jasmine
+
+ 
+
+Une documentation d’installation et de lancement sera fournie.
