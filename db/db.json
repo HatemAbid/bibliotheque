@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "login": "login",
+      "password": "password",
+      "role": "admin",
+      "email": "email01@email.com"
+    }
+  ]
+  "ouvrages": [
+    {
+      "id": "1",
+      "titre": "ouvrage 01",
+      "date": "01/01/2000",
+      "prix": "10"
+    },
+    {
+      "id": "2",
+      "titre": "ouvrage 02",
+      "date": "01/01/2000",
+      "prix": "20"
+    }
+    
+  ]
+  
+}
