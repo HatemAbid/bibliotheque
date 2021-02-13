@@ -4,6 +4,7 @@ export const authCodeFlowConfig: AuthConfig = {
   // Url of the Identity Provider
   issuer: "https://www.google.fr",
   //https://www.linkedin.com/pulse/implicit-flow-authentication-using-angular-ghanshyam-shukla
+  
   //https://github.com/manfredsteyer/angular-oauth2-oidc 
 
   // URL of the SPA to redirect the user to after login
