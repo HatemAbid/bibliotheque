@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  visibility = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  show(): void {
+    this.visibility = !this.visibility;
   }
 
 }
