@@ -3,6 +3,25 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Date</th>
+      <th scope="col">Prix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ouvrage of ouvrages">
+      <th scope="row">1</th>
+      <td>{{ ouvrage.titre }}</td>
+      <td>{{ ouvrage.date }}</td>
+      <td>{{ ouvrage.prix }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
       <th scope="col">Handle</th>
@@ -28,4 +47,3 @@
     </tr>
   </tbody>
 </table>
-<li *ngFor="let ouvrage of ouvrages" > {{ ouvrage.titre }}</li>
