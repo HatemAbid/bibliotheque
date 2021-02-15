@@ -1,31 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Ouvrage } from 'src/app/model/Ouvrage';
-import { OuvrageService } from 'src/app/ouvrage.service';
-
+import { Component, OnInit } from "@angular/core";
+import { Ouvrage } from "src/app/model/Ouvrage";
+import { OuvrageService } from "../../ouvrage.service";
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  selector: "app-list",
+  templateUrl: "./list.component.html",
+  styleUrls: ["./list.component.css"]
 })
 export class ListComponent implements OnInit {
-
   private ouvrages: Ouvrage[];
-  constructor(
-    private ouvrageService: OuvrageService
-  ) { }
+  constructor(private ouvrageService: OuvrageService) {}
 
   ngOnInit(): void {
-
     this.ouvrageService.getOuvrages().subscribe(
-      (ouvrages) => {
+      ouvrages => {
         this.ouvrages = ouvrages;
       },
-      (error) => {
-        alert('Erreur');
+      error => {
+        alert("Erreur");
         console.log(error);
       }
     );
   }
-
 }
