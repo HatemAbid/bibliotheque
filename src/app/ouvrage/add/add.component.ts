@@ -18,7 +18,7 @@ export class AddComponent implements OnInit {
 
   addOuvrage(formulaire){
     console.log(formulaire);
-    this.ouvrageService.addOuvrage(formulaire.value).subscribe(
+    this.ouvrageService.addOuvrage(formulaire).subscribe(
       (reponse) => {
         const link = ['list'];
         this.router.navigate(link);
