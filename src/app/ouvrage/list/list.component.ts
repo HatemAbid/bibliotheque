@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Ouvrage } from 'src/app/model/Ouvrage';
+
 
 @Component({
   selector: 'app-list',
