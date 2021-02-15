@@ -8,12 +8,12 @@ import { Ouvrage } from "./model/ouvrage";
 })
 export class OuvrageService {
   // https://my-json-server.typicode.com/HatemAbid/bibliotheque
-  private ouvrages: Ouvrage[];
+
   link = "https://my-json-server.typicode.com/HatemAbid/bibliotheque";
   constructor(private http: HttpClient) {}
 
-  getPersonnes(): Observable<Ouvrage[]> {
+  getOuvrages(): Observable<Ouvrage[]> {
     // return this.personnes;
-    return this.http.get<Ouvrage[]>(this.link + '/ouvrages');
+    return this.http.get<Ouvrage[]>(this.link + "/ouvrages");
   }
 }
