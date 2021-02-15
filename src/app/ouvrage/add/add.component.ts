@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OuvrageService } from "../../ouvrage.service";
 
 @Component({
   selector: 'app-add',
@@ -7,13 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  errorMessage = '';
+  constructor(private ouvrageService: OuvrageService,
+  private router: Router) { }
 
   ngOnInit(): void {
   }
 
   addOuvrage(formulaire){
     console.log(formulaire);
+    this.ouvrageService.addOuvrage(formulaire.value).subscribe(
+      (reponse) => {
+        const link = ['list'];
+        this.router.navigate(link);
+      },
+      (error) => {
+        this.errorMessage = `Probléme de connexion au serveur`;
+        alert(`Probléme de connexion au serveur`);
+        console.log('Message d erreur', error);
+      }
+    );
   }
 
 }

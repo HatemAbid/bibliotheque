@@ -16,4 +16,8 @@ export class OuvrageService {
     // return this.personnes;
     return this.http.get<Ouvrage[]>(this.link + "/ouvrages");
   }
+
+  addOuvrage(ouvrage: Ouvrage): Observable<any> {
+    return this.http.post(this.link + "/ouvrages", ouvrage);
+  }
 }
