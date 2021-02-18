@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Ouvrage } from "src/app/model/Ouvrage";
 import { OuvrageService } from "../../ouvrage.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-list",
@@ -9,7 +10,8 @@ import { OuvrageService } from "../../ouvrage.service";
 })
 export class ListComponent implements OnInit {
   private ouvrages: Ouvrage[];
-  constructor(private ouvrageService: OuvrageService) {}
+  ouvrage: Ouvrage;
+  constructor(private router: Router, private ouvrageService: OuvrageService) {}
 
   ngOnInit(): void {
     this.ouvrageService.getOuvrages().subscribe(
@@ -21,5 +23,9 @@ export class ListComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  detailOuvrage(): void {
+    this.router.navigate(["detail/", this.ouvrage.id]);
   }
 }
