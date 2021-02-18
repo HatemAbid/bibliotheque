@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { OuvrageService } from "../../ouvrage.service";
+import { Ouvrage } from "src/app/model/Ouvrage";
+
 
 @Component({
   selector: 'app-detail',
@@ -8,15 +11,32 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DetailComponent implements OnInit {
 
+  errorMessage = '';
+  ouvrage : Ouvrage;
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private ouvrageService: OuvrageService
   ) { }
 
   ngOnInit(): void {
+  //   this.activatedRoute.params.subscribe(
+  //     (params) => {
+  //       console.log(params.id);
+  //     }
+  //   );
     this.activatedRoute.params.subscribe(
       (params) => {
-        console.log(params.id);
+        this.ouvrageService.getOuvrageById(params.id).subscribe(
+          (ouvrage) => {
+            this.ouvrage = ouvrage;
+          },
+          (error) => {
+            this.errorMessage = `Probléme de connexion au serveur`;
+            // alert('Erreur');
+            console.log(error);
+          }
+        );
       }
     );
   }
