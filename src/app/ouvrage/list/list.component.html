@@ -12,6 +12,8 @@
     <tr *ngFor="let ouvrage of ouvrages">
       <th scope="row">{{ ouvrage.id }}  <button class="btn btn-primary" (click) = "detailOuvrage(ouvrage.id)">
     Detail
+  </button><button class="btn btn-primary" (click) = "detailOuvrage(ouvrage.id)">
+    Edit
   </button>
   </th>
       <td>{{ ouvrage.titre }}</td>

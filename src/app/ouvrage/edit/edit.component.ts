@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OuvrageService } from "../../ouvrage.service";
+import { Ouvrage } from "src/app/model/Ouvrage";
 
 @Component({
   selector: 'app-edit',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
-  constructor() { }
+  errorMessage = '';
+  ouvrage : Ouvrage;
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private ouvrageService: OuvrageService
+  ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        this.ouvrageService.getOuvrageById(params.id).subscribe(
+          (ouvrage) => {
+            this.ouvrage = ouvrage;
+          },
+          (error) => {
+            this.errorMessage = `Probléme de connexion au serveur`;
+            // alert('Erreur');
+            console.log(error);
+          }
+        );
+      }
+    );
   }
 
 }
