@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let ouvrage of ouvrages">
-      <th scope="row">{{ ouvrage.id }}  <button class="btn btn-primary" (click) = "detailOuvrage()">
+      <th scope="row">{{ ouvrage.id }}  <button class="btn btn-primary" (click) = "detailOuvrage(ouvrage.id)">
     Detail
   </button>
   </th>

@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
     );
   }
 
-  detailOuvrage(): void {
-    this.router.navigate(["detail/", this.ouvrage.id]);
+  detailOuvrage(id): void {
+    this.router.navigate(["detail", id]);
   }
 }
