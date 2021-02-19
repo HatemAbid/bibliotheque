@@ -15,6 +15,17 @@
     }
     
   ],
+  "categories": [
+    {
+      "id": "1",
+      "titre": "Categorie 01"
+    },
+    {
+      "id": "2",
+      "titre": "Categorie 02"
+    }
+    
+  ],
   "users": [
     {
       "id": "1",
