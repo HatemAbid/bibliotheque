@@ -25,6 +25,10 @@ export class OuvrageService {
     return this.http.put(this.link + "/ouvrages" , ouvrage);
   }
 
+  deleteOuvrage(id: number): Observable<any> {
+    return this.http.delete(this.link + "/ouvrages" + `/${id}`);
+  }
+
   getOuvrageById(id: number): Observable<Ouvrage> {
     return this.http.get<Ouvrage>(this.link + "/ouvrages" + `/${id}`);
   }

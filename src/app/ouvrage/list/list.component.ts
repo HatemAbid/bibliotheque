@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Ouvrage } from "src/app/model/Ouvrage";
+import { Ouvrage } from "../../model/Ouvrage";
 import { OuvrageService } from "../../ouvrage.service";
 import { Router } from "@angular/router";
 
@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 export class ListComponent implements OnInit {
   private ouvrages: Ouvrage[];
   ouvrage: Ouvrage;
+  errorMessage = "";
   constructor(private router: Router, private ouvrageService: OuvrageService) {}
 
   ngOnInit(): void {
@@ -31,5 +32,20 @@ export class ListComponent implements OnInit {
 
   editOuvrage(id): void {
     this.router.navigate(["edit", id]);
+  }
+
+  deleteOuvrage(id): void {
+    console.log(this.ouvrage);
+    this.ouvrageService.deleteOuvrage(id).subscribe(
+      reponse => {
+        const link = ["list"];
+        this.router.navigate(link);
+      },
+      error => {
+        this.errorMessage = `Probléme de connexion au serveur`;
+        alert(`Probléme de connexion au serveur`);
+        console.log("Message d erreur", error);
+      }
+    );
   }
 }
