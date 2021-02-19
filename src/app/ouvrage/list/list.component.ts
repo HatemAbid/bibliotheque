@@ -28,4 +28,8 @@ export class ListComponent implements OnInit {
   detailOuvrage(id): void {
     this.router.navigate(["detail", id]);
   }
+
+  editOuvrage(id): void {
+    this.router.navigate(["edit", id]);
+  }
 }
