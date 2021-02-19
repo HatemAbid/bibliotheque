@@ -3,17 +3,17 @@
 <form #formulaire="ngForm" *ngIf="ouvrage">
   <div class="form-group">
     <label for="exampleFormControlInput1">Titre</label>
-    <input type="text" class="form-control" placeholder="Titre" [(ngModel)]="ouvrage.titre" name="titre"  id="titre">
+    <input required  type="text" class="form-control" placeholder="Titre" [(ngModel)]="ouvrage.titre" name="titre"  id="titre">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Date Publication</label>
-    <input type="text" class="form-control" placeholder="Date Publication" [(ngModel)]="ouvrage.date" name="date" id="date">
+    <input required  type="text" class="form-control" placeholder="Date Publication" [(ngModel)]="ouvrage.date" name="date" id="date">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Prix</label>
-    <input type="text" class="form-control"  placeholder="Prix" [(ngModel)]="ouvrage.prix" name="prix" id="prix">
+    <input required type="text" class="form-control"  placeholder="Prix" [(ngModel)]="ouvrage.prix" name="prix" id="prix">
   </div>
-  <button class="btn btn-primary" (click)="editOuvrage()">Valider</button>
+  <button class="btn btn-primary" (click)="editOuvrage()" [disabled]="formulaire.invalid">Valider</button>
 </form>
 
 

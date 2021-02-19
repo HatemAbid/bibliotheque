@@ -2,15 +2,15 @@
 <form #formulaire="ngForm">
   <div class="form-group">
     <label for="exampleFormControlInput1">Titre</label>
-    <input type="text" class="form-control" placeholder="Titre" ngModel name="titre">
+    <input required type="text" class="form-control" placeholder="Titre" ngModel name="titre">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Date Publication</label>
-    <input type="text" class="form-control" placeholder="Date Publication" ngModel name="date">
+    <input required type="text" class="form-control" placeholder="Date Publication" ngModel name="date">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Prix</label>
-    <input type="text" class="form-control"  placeholder="Prix" ngModel name="prix">
+    <input required type="text" class="form-control"  placeholder="Prix" ngModel name="prix">
   </div>
-  <button class="btn btn-primary" (click)="addOuvrage(formulaire.value)">Valider</button>
+  <button class="btn btn-primary" (click)="addOuvrage(formulaire.value)" [disabled]="formulaire.invalid">Valider</button>
 </form>
