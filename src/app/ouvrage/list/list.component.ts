@@ -35,7 +35,7 @@ export class ListComponent implements OnInit {
   }
 
   deleteOuvrage(id): void {
-    console.log(this.ouvrage);
+    console.log("Delete ", id);
     this.ouvrageService.deleteOuvrage(id).subscribe(
       reponse => {
         const link = ["list"];
