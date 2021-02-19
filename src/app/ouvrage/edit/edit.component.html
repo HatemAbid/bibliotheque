@@ -1,4 +1,22 @@
 <p>edit works! {{ ouvrage.titre }} - {{ ouvrage.date }} - {{ ouvrage.prix }}</p>
+
+<form #formulaire="ngForm" *ngIf="ouvrage">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Titre</label>
+    <input type="text" class="form-control" placeholder="Titre" [(ngModel)]="ouvrage.titre" name="titre">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Date Publication</label>
+    <input type="text" class="form-control" placeholder="Date Publication" [(ngModel)]="ouvrage.date" name="date">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Prix</label>
+    <input type="text" class="form-control"  placeholder="Prix" [(ngModel)]="ouvrage.prix" name="prix">
+  </div>
+  <button class="btn btn-primary" (click)="editOuvrage(formulaire.value)">Valider</button>
+</form>
+
+
 <form>
   <div class="form-group">
     <label for="exampleFormControlInput1">Email address</label>

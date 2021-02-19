@@ -21,6 +21,10 @@ export class OuvrageService {
     return this.http.post(this.link + "/ouvrages", ouvrage);
   }
 
+  editOuvrage(ouvrage: Ouvrage): Observable<any> {
+    return this.http.put(this.link + "/ouvrages" + `/${ouvrage.id}`, ouvrage);
+  }
+
   getOuvrageById(id: number): Observable<Ouvrage> {
     return this.http.get<Ouvrage>(this.link + "/ouvrages" + `/${id}`);
   }

@@ -35,4 +35,19 @@ export class EditComponent implements OnInit {
     );
   }
 
+  editOuvrage(formulaire){
+    console.log(formulaire);
+    this.ouvrageService.editOuvrage(formulaire).subscribe(
+      (reponse) => {
+        const link = ['list'];
+        this.router.navigate(link);
+      },
+      (error) => {
+        this.errorMessage = `Probléme de connexion au serveur`;
+        alert(`Probléme de connexion au serveur`);
+        console.log('Message d erreur', error);
+      }
+    );
+  }
+
 }
