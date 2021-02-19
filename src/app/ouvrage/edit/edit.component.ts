@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { OuvrageService } from "../../ouvrage.service";
-import { Ouvrage } from "src/app/model/Ouvrage";
+import { Ouvrage } from "../../model/Ouvrage";
 
 @Component({
   selector: "app-edit",
