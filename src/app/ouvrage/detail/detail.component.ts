@@ -12,7 +12,7 @@ import { Ouvrage } from "../../model/Ouvrage";
 export class DetailComponent implements OnInit {
 
   errorMessage = '';
-  ouvrage : Ouvrage;
+  ouvrage: Ouvrage;
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
