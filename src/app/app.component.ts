@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { filter } from 'rxjs/operators';
-import { authCodeFlowConfig } from './auth.config';
 import { JwksValidationHandler } from 'angular-oauth2-oidc-jwks';
 
 @Component({
@@ -12,33 +11,7 @@ import { JwksValidationHandler } from 'angular-oauth2-oidc-jwks';
 export class AppComponent {
   title = 'bibliotheque';
 
-  constructor(private oauthService: OAuthService) {
-    this.oauthService.configure(authCodeFlowConfig);
-    this.oauthService.loadDiscoveryDocumentAndLogin();
+  constructor() {
 
-    //this.oauthService.setupAutomaticSilentRefresh();
-
-    // Automatically load user profile
-    this.oauthService.events
-      .pipe(filter(e => e.type === 'token_received'))
-      .subscribe(_ => this.oauthService.loadUserProfile());
-  }
-
-  get userName(): string {
-    const claims = this.oauthService.getIdentityClaims();
-    if (!claims) return null;
-    return claims['given_name'];
-  }
-
-  get idToken(): string {
-    return this.oauthService.getIdToken();
-  }
-
-  get accessToken(): string {
-    return this.oauthService.getAccessToken();
-  }
-
-  refresh() {
-    this.oauthService.refreshToken();
-  }
+}
 }

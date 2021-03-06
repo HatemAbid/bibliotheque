@@ -65,7 +65,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "bibliotheque:build:production"
+              "browserTarget": "bibliotheque:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },

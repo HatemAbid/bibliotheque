@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Ouvrage } from "../../model/Ouvrage";
 import { OuvrageService } from "../../ouvrage.service";
-import { Router } from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
+import { OauthService } from '../../oauth.service';
 
 @Component({
   selector: "app-list",
@@ -12,9 +13,14 @@ export class ListComponent implements OnInit {
   ouvrages: Ouvrage[];
   ouvrage: Ouvrage;
   errorMessage = "";
-  constructor(private router: Router, private ouvrageService: OuvrageService) {}
+  username:string;
+
+  constructor(private router: Router, private ouvrageService: OuvrageService, private active:ActivatedRoute,private serv:OauthService) {}
+
 
   ngOnInit(): void {
+
+    this.serv.getUserDetails().subscribe(reponse=>this.username=reponse["login"],error=>{console.log(error)});
     this.ouvrageService.getOuvrages().subscribe(
       ouvrages => {
         this.ouvrages = ouvrages;
@@ -25,6 +31,12 @@ export class ListComponent implements OnInit {
       }
     );
   }
+
+
+logout()
+{
+  this.serv.logout().subscribe(reponse=>this.router.navigate(["login"]),error=>{console.log( error)});
+}
 
   detailOuvrage(id): void {
     this.router.navigate(["detail", id]);
